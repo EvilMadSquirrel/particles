@@ -32,6 +32,7 @@ struct World {
     width: f64,
     rng: ThreadRng,
 }
+
 struct Particle {
     height: f64,
     widht: f64,
@@ -97,6 +98,7 @@ impl World {
         self.current_turn += 1;
     }
 }
+
 impl Particle {
     fn new(world: &World) -> Particle {
         let mut rng = thread_rng();
@@ -123,6 +125,7 @@ impl Particle {
         self.color[3] *= 0.995;
     }
 }
+
 fn main() {
     let (width, height) = (1280.0, 960.0);
     let mut window: PistonWindow = WindowSettings::new("particles", [width, height])
